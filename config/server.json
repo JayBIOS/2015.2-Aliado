@@ -1,0 +1,8 @@
+{
+  "port": 3000
+  , "publicFolder": "public"
+  , "db": {
+    "ip": "localhost"
+    , "name": "sm"
+  }
+}

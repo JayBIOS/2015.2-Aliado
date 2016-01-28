@@ -1,0 +1,41 @@
+{
+  "name": "jogo-de-aliado",
+  "version": "0.0.2",
+  "description": "Eu como jogador posso jogar dados para mover as fichas",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "node server.js && karma start --single-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JayBIOS/2015.2-Aliado.git"
+  },
+  "keywords": [
+    "saco",
+    "mucho",
+    "ifrn",
+    "tads"
+  ],
+  "author": "Jonathan Batista de Oliveira Silva",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/JayBIOS/2015.2-Aliado/issues"
+  },
+  "homepage": "https://github.com/JayBIOS/2015.2-Aliado#readme",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "chai": "^3.5.0",
+    "chai-http": "^1.0.0",
+    "compression": "^1.6.1",
+    "express": "^4.13.4",
+    "express-load": "^1.1.15",
+    "gulp-util": "^3.0.7",
+    "method-override": "^2.3.5",
+    "mocha": "^2.4.4",
+    "mongoose": "^4.3.7",
+    "morgan": "^1.6.1",
+    "path": "^0.12.7",
+    "supertest": "^1.1.0"
+  }
+}
