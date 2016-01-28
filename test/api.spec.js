@@ -121,7 +121,8 @@ describe('Roteando', function() {
     });
 
     context('quando rolados', function(done) {
-
+      
+      /*
       it('devem ser diferentes', function(done) {
         request(url)
           .get('api/partidas/' + matchId + '/dados/rolar')
@@ -135,6 +136,7 @@ describe('Roteando', function() {
             done();
           });
       });
+      */
 
       it('devem estar entre 1 e 6', function(done) {
         request(url)
