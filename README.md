@@ -12,3 +12,15 @@
 ## Aluno
 
 - Jonathan Batista de Oliveira Silva : 20142014040329
+
+#### Instruções
+
+Configurações ficam na pasta config.
+
+Instale os pacotes primeiro
+
+    npm install
+
+Para rodar os testes use
+
+    npm run test
