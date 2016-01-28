@@ -44,7 +44,7 @@ module.exports = function(app) {
       _id: req.match._id
     }, item, {}, function(err, updatedMatch) {
       if (err) { return res.status(500).json(err); }
-      res.json(item);
+      res.json(item.dice);
     });
   };
 
