@@ -37,9 +37,9 @@ module.exports = function(app) {
   * @param {Object} res Resposta do servidor
   **/
   Controller.roll = function(req, res) {
-    item = {
+    var item = {
       dice: [Math.floor((Math.random() * 6) + 1), Math.floor((Math.random() * 6) + 1)]
-    }
+    };
     Controller.MODEL.update({
       _id: req.match._id
     }, item, {}, function(err, updatedMatch) {
