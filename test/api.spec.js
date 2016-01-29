@@ -9,7 +9,7 @@
 chai.use(chaiHttp);
 
 var express = require('../lib/express')(config.publicFolder, true);
-url = express.listen(config.port);
+var server;
 
 var request = chai.request
   , expect = chai.expect
@@ -19,13 +19,18 @@ describe('Roteando', function() {
   var url = 'http://localhost:' + config.port + '/';
   before(function(done) {
     connectToMongo('mongodb://' + config.db.ip + '/' + config.db.name, true);
-    done();
+    server = express.listen(config.port, done);
+    //done();
+  });
+
+  after(function(done) {
+    server.close(done);
   });
 
   describe('Partida', function() {
-    
+
     var matchId;
-    
+
     context('quando no inicio', function() {
       it('deve ser criada', function(done) {
         var match = {
@@ -62,8 +67,8 @@ describe('Roteando', function() {
         });
       });
     });
-    
-    describe('#dados', function(done){
+
+    describe('#dados', function(done) {
       var dnow;
 
       it('devem ser listados', function(done) {
@@ -82,7 +87,7 @@ describe('Roteando', function() {
       });
 
       context('quando rolados', function(done) {
-        
+
         /*
         it('devem ser diferentes', function(done) {
           request(url)
@@ -107,14 +112,14 @@ describe('Roteando', function() {
                 throw err;
               }
               expect(res).to.have.status(200);
-              expect(res.body[0]).to.be.above(0).and.below(7)
-              expect(res.body[1]).to.be.above(0).and.below(7)
+              expect(res.body[0]).to.be.above(0).and.below(7);
+              expect(res.body[1]).to.be.above(0).and.below(7);
               done();
             });
         });
       });
     });
-    
+
     context('quando no fim', function() {
       it('deve ser removida', function(done) {
         request(url)
